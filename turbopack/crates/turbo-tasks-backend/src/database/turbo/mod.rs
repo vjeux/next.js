@@ -88,6 +88,11 @@ impl TurboKeyValueDatabase {
         self.db.is_empty()
     }
 
+    /// Whether the database held no data when it was opened.
+    pub fn is_fresh(&self) -> bool {
+        self.is_fresh
+    }
+
     pub fn get(&self, key_space: KeySpace, key: &[u8]) -> Result<Option<ArcBytes>> {
         self.db.get(key_space as usize, &key)
     }

@@ -228,6 +228,12 @@ impl TurboBackingStorage {
         self.inner.invalidate(reason_code)
     }
 
+    /// Whether the database held no data when it was opened. Nothing is restored from a fresh
+    /// database: every task of the session is created, connected and executed during the session.
+    pub fn is_fresh(&self) -> bool {
+        self.inner.database.is_fresh()
+    }
+
     pub(crate) fn next_free_task_id(&self) -> Result<TaskId> {
         Ok(self
             .inner

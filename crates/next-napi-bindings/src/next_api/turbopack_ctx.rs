@@ -330,6 +330,15 @@ pub fn create_turbo_tasks(
             &version_info,
             storage_options,
         )?;
+        // A build (`is_short_session`) persists only at shutdown, and when its database starts
+        // out empty nothing is restored from disk: every task is created, connected and
+        // scheduled during this session. Activeness tracking exists to find and schedule the
+        // dirty tasks of a subgraph that becomes active again, which such a session never has,
+        // so it would only add work (the active counts propagate through the aggregation
+        // graph; for large graphs that is the dominant cost of enabling the filesystem cache).
+        // Activeness is transient state, so the persisted graph is unchanged and the next build
+        // restores it with activeness tracking enabled.
+        let active_tracking = !(is_short_session && backing_storage.is_fresh());
         let (gc, gc_min_progress, gc_root_ttl) = match gc {
             Some(NapiTurbopackGcOptions {
                 min_progress_ms,
@@ -351,6 +360,7 @@ pub fn create_turbo_tasks(
                     turbo_tasks_backend::StorageMode::ReadWrite
                 }),
                 dependency_tracking,
+                active_tracking,
                 num_workers: Some(tokio::runtime::Handle::current().metrics().num_workers()),
                 eviction_mode: EvictionMode::from(turbopack_memory_eviction),
                 gc,
