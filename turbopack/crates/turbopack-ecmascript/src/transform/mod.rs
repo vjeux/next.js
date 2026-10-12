@@ -563,10 +563,16 @@ async fn apply_rust_react_compiler(
         crate::swc_comments::swc_comments_to_single_threaded(ctx.comments);
     let result = swc_ecma_react_compiler::transform(
         program,
-        swc_ecma_react_compiler::SourceType::from_program(program),
+        react_compiler_source_type(program, ctx.file_name_str),
         ctx.source_text,
         Some(&single_threaded_comments),
-        react_compiler_options(ctx.node_env.as_str(), ctx.file_name_str, options, target),
+        react_compiler_options(
+            ctx.node_env.as_str(),
+            ctx.file_name_str,
+            ctx.source_text,
+            options,
+            target,
+        ),
     );
 
     // TODO: Emit these diagnostics with an Info level once there's a way of adjusting log levels in
@@ -591,18 +597,42 @@ async fn apply_rust_react_compiler(
     Ok(helpers)
 }
 
+/// The source type the compiler's scope analysis runs with. The module flag comes from the parsed
+/// program; the TypeScript flag from the file extension, which is also what selects the TypeScript
+/// parser for the module.
+fn react_compiler_source_type(
+    program: &Program,
+    file_name: &str,
+) -> swc_ecma_react_compiler::SourceType {
+    swc_ecma_react_compiler::SourceType::from_program(program)
+        .with_typescript(is_typescript_file_name(file_name))
+}
+
+fn is_typescript_file_name(file_name: &str) -> bool {
+    let extension = file_name
+        .rsplit_once('.')
+        .map(|(_, extension)| extension)
+        .unwrap_or("");
+    extension.eq_ignore_ascii_case("ts")
+        || extension.eq_ignore_ascii_case("tsx")
+        || extension.eq_ignore_ascii_case("mts")
+        || extension.eq_ignore_ascii_case("cts")
+}
+
 fn react_compiler_options(
     node_env: &str,
     file_name: &str,
+    source_text: &str,
     options: ReactCompilerTransformOptions,
     target: ReactCompilerTarget,
 ) -> react_compiler::entrypoint::plugin_options::PluginOptions {
     use react_compiler::entrypoint::plugin_options::{CompilerTarget, PluginOptions};
 
+    let is_dev = node_env != "production";
     let mut plugin_options = PluginOptions {
         should_compile: true,
         enable_reanimated: false,
-        is_dev: node_env != "production",
+        is_dev,
         filename: Some(file_name.to_string()),
         compilation_mode: options.compilation_mode.as_str().to_string(),
         panic_threshold: "none".to_string(),
@@ -612,14 +642,31 @@ fn react_compiler_options(
         no_emit: false,
         output_mode: None,
         eslint_suppression_rules: None,
-        flow_suppressions: false,
+        // The compiler's own default: a function under a Flow suppression comment for a React
+        // rule is left uncompiled, as the Babel plugin leaves it.
+        flow_suppressions: true,
         ignore_use_no_forget: false,
         custom_opt_out_directives: None,
         environment: Default::default(),
-        source_code: None,
+        // The compiler hashes the source text into the memo cache's first slot when
+        // `enable_reset_cache_on_source_file_changes` is on (below); without the text it emits no
+        // guard.
+        source_code: is_dev.then(|| source_text.to_string()),
         profiling: false,
         debug: false,
     };
+    // In development the compiler names the anonymous functions it memoizes after their owner
+    // (`Component[onClick]`), so React DevTools and stack traces keep a readable name. The same
+    // development-only option the Babel plugin integration passes.
+    plugin_options.environment.enable_name_anonymous_functions = is_dev;
+    // In development the Babel plugin also resets a component's memo cache when its source file
+    // changes (the `$[0] !== "<hash>"` guard), so Fast Refresh renders the edited code instead of
+    // values memoized by the old one. The compiler does not derive this from `is_dev` itself.
+    if is_dev {
+        plugin_options
+            .environment
+            .enable_reset_cache_on_source_file_changes = Some(true);
+    }
     if let Some(enable_preserve_existing_memoization_guarantees) =
         options.enable_preserve_existing_memoization_guarantees
     {
@@ -713,6 +760,7 @@ mod react_compiler_tests {
         let options = react_compiler_options(
             "production",
             "input.js",
+            "",
             ReactCompilerTransformOptions::default(),
             ReactCompilerTarget::React19,
         );
@@ -729,6 +777,7 @@ mod react_compiler_tests {
         let options = react_compiler_options(
             "production",
             "input.js",
+            "",
             ReactCompilerTransformOptions {
                 compilation_mode: ReactCompilerCompilationMode::Infer,
                 enable_preserve_existing_memoization_guarantees: Some(false),
@@ -741,6 +790,93 @@ mod react_compiler_tests {
                 .environment
                 .enable_preserve_existing_memoization_guarantees
         );
+    }
+
+    #[test]
+    fn names_anonymous_functions_in_development_only() {
+        let development = react_compiler_options(
+            "development",
+            "input.js",
+            "",
+            ReactCompilerTransformOptions::default(),
+            ReactCompilerTarget::React19,
+        );
+        let production = react_compiler_options(
+            "production",
+            "input.js",
+            "",
+            ReactCompilerTransformOptions::default(),
+            ReactCompilerTarget::React19,
+        );
+
+        assert!(development.is_dev);
+        assert!(development.environment.enable_name_anonymous_functions);
+        assert!(!production.is_dev);
+        assert!(!production.environment.enable_name_anonymous_functions);
+    }
+
+    #[test]
+    fn resets_the_memo_cache_on_source_changes_in_development_only() {
+        let source = "export function Component() { return <div />; }";
+        let development = react_compiler_options(
+            "development",
+            "input.js",
+            source,
+            ReactCompilerTransformOptions::default(),
+            ReactCompilerTarget::React19,
+        );
+        let production = react_compiler_options(
+            "production",
+            "input.js",
+            source,
+            ReactCompilerTransformOptions::default(),
+            ReactCompilerTarget::React19,
+        );
+
+        assert_eq!(
+            development
+                .environment
+                .enable_reset_cache_on_source_file_changes,
+            Some(true)
+        );
+        assert_eq!(development.source_code.as_deref(), Some(source));
+        assert_eq!(
+            production
+                .environment
+                .enable_reset_cache_on_source_file_changes,
+            None
+        );
+        assert_eq!(production.source_code, None);
+    }
+
+    #[test]
+    fn keeps_the_compiler_default_for_flow_suppressions() {
+        let options = react_compiler_options(
+            "production",
+            "input.js",
+            "",
+            ReactCompilerTransformOptions::default(),
+            ReactCompilerTarget::React19,
+        );
+
+        assert_eq!(
+            options.flow_suppressions,
+            swc_ecma_react_compiler::default_plugin_options().flow_suppressions
+        );
+        assert!(options.flow_suppressions);
+    }
+
+    #[test]
+    fn source_type_follows_the_file_extension() {
+        let program = parse_program("export function Component() { return <div />; }");
+
+        assert!(react_compiler_source_type(&program, "component.tsx").is_typescript());
+        assert!(react_compiler_source_type(&program, "hooks.ts").is_typescript());
+        assert!(react_compiler_source_type(&program, "hooks.MTS").is_typescript());
+        assert!(!react_compiler_source_type(&program, "component.jsx").is_typescript());
+        assert!(!react_compiler_source_type(&program, "module.mjs").is_typescript());
+        assert!(!react_compiler_source_type(&program, "noextension").is_typescript());
+        assert!(react_compiler_source_type(&program, "component.tsx").is_module());
     }
 
     fn parse_program(source: &str) -> Program {
