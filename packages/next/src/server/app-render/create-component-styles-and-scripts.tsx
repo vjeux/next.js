@@ -38,6 +38,7 @@ export async function createComponentStylesAndScripts({
         async: true,
         key: `script-${scriptIndex}`,
         nonce: ctx.nonce,
+        crossOrigin: ctx.renderOpts.crossOrigin,
       })
     )
     scriptIndex++
