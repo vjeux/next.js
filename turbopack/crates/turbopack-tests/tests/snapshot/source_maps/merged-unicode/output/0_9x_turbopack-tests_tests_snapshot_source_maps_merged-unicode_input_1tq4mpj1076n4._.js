@@ -26,14 +26,14 @@ const waitAtLeastOneReactRenderTask = 1; //import { waitAtLeastOneReactRenderTas
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$source_maps$2f$merged$2d$unicode$2f$input$2f$entry$2d$base$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/source_maps/merged-unicode/input/entry-base.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$source_maps$2f$merged$2d$unicode$2f$input$2f$entry$2d$base$2e$js__$5b$e4fe157e3c$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/source_maps/merged-unicode/input/entry-base.js [test] (ecmascript)");
 ;
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/source_maps/merged-unicode/input/index2.js [test] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$source_maps$2f$merged$2d$unicode$2f$input$2f$entry$2d$base$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/source_maps/merged-unicode/input/entry-base.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$source_maps$2f$merged$2d$unicode$2f$input$2f$entry$2d$base$2e$js__$5b$e4fe157e3c$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/source_maps/merged-unicode/input/entry-base.js [test] (ecmascript)");
 ;
 }),
 ]})(),

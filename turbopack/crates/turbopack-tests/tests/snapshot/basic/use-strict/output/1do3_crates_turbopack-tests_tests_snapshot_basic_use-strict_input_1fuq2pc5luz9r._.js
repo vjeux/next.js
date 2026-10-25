@@ -24,11 +24,11 @@ __turbopack_context__.s([
     "value",
     ()=>value
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$a$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/basic/use-strict/input/all-strict-a.js [test] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$b$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/basic/use-strict/input/all-strict-b.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$a$2e$js__$5b$40b1dfc568$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/basic/use-strict/input/all-strict-a.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$b$2e$js__$5b$fca2ec1ac4$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/basic/use-strict/input/all-strict-b.js [test] (ecmascript)");
 ;
 ;
-const value = __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$a$2e$js__$5b$test$5d$__$28$ecmascript$29$__["a"] + __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$b$2e$js__$5b$test$5d$__$28$ecmascript$29$__["b"];
+const value = __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$a$2e$js__$5b$40b1dfc568$5d$__["a"] + __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$basic$2f$use$2d$strict$2f$input$2f$all$2d$strict$2d$b$2e$js__$5b$fca2ec1ac4$5d$__["b"];
 }),
 ]);})()
 

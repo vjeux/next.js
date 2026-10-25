@@ -21,7 +21,7 @@ const direct = eval('local') + nested();
 __turbopack_context__.s([], "[project]/turbopack/crates/turbopack-tests/tests/snapshot/scope-hoisting/direct-eval/input/index.js [test] (ecmascript)");
 // MERGED MODULE: [project]/turbopack/crates/turbopack-tests/tests/snapshot/scope-hoisting/direct-eval/input/index.js [test] (ecmascript)
 ;
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$scope$2d$hoisting$2f$direct$2d$eval$2f$input$2f$direct$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/scope-hoisting/direct-eval/input/direct.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$scope$2d$hoisting$2f$direct$2d$eval$2f$input$2f$direct$2e$js__$5b$c724405798$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/scope-hoisting/direct-eval/input/direct.js [test] (ecmascript)");
 // MERGED MODULE: [project]/turbopack/crates/turbopack-tests/tests/snapshot/scope-hoisting/direct-eval/input/indirect.js [test] (ecmascript)
 ;
 const local = 'indirect';
@@ -34,7 +34,7 @@ const indirect = [
 ;
 ;
 const local1 = 'index';
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$scope$2d$hoisting$2f$direct$2d$eval$2f$input$2f$direct$2e$js__$5b$test$5d$__$28$ecmascript$29$__["direct"], indirect, local1);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$scope$2d$hoisting$2f$direct$2d$eval$2f$input$2f$direct$2e$js__$5b$c724405798$5d$__["direct"], indirect, local1);
 }),
 ]);})()
 

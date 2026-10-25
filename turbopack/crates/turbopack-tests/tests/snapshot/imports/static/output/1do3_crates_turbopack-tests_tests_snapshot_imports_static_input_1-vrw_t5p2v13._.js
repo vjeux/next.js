@@ -3,9 +3,9 @@
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$static$2f$input$2f$vercel$2e$svg__$28$static__in__ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/static/input/vercel.svg (static in ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$static$2f$input$2f$vercel$2e$svg__$5b$1fa1035d0c$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/static/input/vercel.svg (static in ecmascript)");
 ;
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$static$2f$input$2f$vercel$2e$svg__$28$static__in__ecmascript$29$__["default"]);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$static$2f$input$2f$vercel$2e$svg__$5b$1fa1035d0c$5d$__["default"]);
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/static/input/vercel.svg (static in ecmascript)", ((__turbopack_context__) => {
 

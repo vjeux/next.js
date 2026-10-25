@@ -6,10 +6,10 @@ __turbopack_context__.s([
     "comment",
     ()=>comment
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Tokenizer$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/swc_transforms/preset_env_modern/input/Tokenizer.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Tokenizer$2e$js__$5b$dc14731cc2$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/swc_transforms/preset_env_modern/input/Tokenizer.js [test] (ecmascript)");
 ;
 function comment() {
-    console.log((0, __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Tokenizer$2e$js__$5b$test$5d$__$28$ecmascript$29$__["char"])());
+    console.log((0, __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Tokenizer$2e$js__$5b$dc14731cc2$5d$__["char"])());
 }
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/swc_transforms/preset_env_modern/input/Tokenizer.js [test] (ecmascript)", ((__turbopack_context__) => {
@@ -27,9 +27,9 @@ function char() {
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Parser$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/swc_transforms/preset_env_modern/input/Parser.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Parser$2e$js__$5b$0d22072047$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/swc_transforms/preset_env_modern/input/Parser.js [test] (ecmascript)");
 ;
-console.log((0, __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Parser$2e$js__$5b$test$5d$__$28$ecmascript$29$__["comment"])());
+console.log((0, __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$swc_transforms$2f$preset_env_modern$2f$input$2f$Parser$2e$js__$5b$0d22072047$5d$__["comment"])());
 }),
 ]);})()
 

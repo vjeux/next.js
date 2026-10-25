@@ -121,6 +121,24 @@ describe('deobfuscateText', () => {
     expect(output).toBe('{module evaluation} called {foo/bar}')
   })
 
+  // Turbopack names the variable of an imported module after a short path and
+  // a hash of the module id, e.g. `imported module ./app/foo.ts [0123456789]`.
+  test('deobfuscates a compact imported module name for app code', () => {
+    const input =
+      '(0 , __TURBOPACK__imported__module__$2e2f$examples$2f$with$2d$turbopack$2f$app$2f$foo$2e$ts__$5b$0123456789$5d$__.foo) is not a function'
+    expect(deobfuscateText(input)).toBe(
+      '{imported module ./examples/with-turbopack/app/foo.ts}.foo is not a function'
+    )
+  })
+
+  test('deobfuscates a compact imported module name for a package', () => {
+    const input =
+      '(0 , __TURBOPACK__imported__module__$40$scope$2f$ui$2f$dist$2f$Button$2f$Button$2e$js__$5b$a6c6ddd344$5d$__.Button) is not a function'
+    expect(deobfuscateText(input)).toBe(
+      '{imported module @scope/ui/dist/Button/Button.js}.Button is not a function'
+    )
+  })
+
   test('leaves regular text unchanged', () => {
     const input = 'This is a regular error message'
     expect(deobfuscateText(input)).toBe(input)

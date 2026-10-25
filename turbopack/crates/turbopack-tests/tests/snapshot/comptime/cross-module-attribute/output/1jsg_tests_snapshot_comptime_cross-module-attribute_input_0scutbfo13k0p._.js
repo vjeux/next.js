@@ -3,8 +3,8 @@
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$other$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-attribute/input/other.js [test] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$non$2d$constant$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-attribute/input/non-constant.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$other$2e$js__$5b$57eaaf3787$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-attribute/input/other.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$non$2d$constant$2e$js__$5b$3488130073$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-attribute/input/non-constant.js [test] (ecmascript)");
 ;
 if ("TURBOPACK compile-time truthy", 1) {
     console.log('x');
@@ -12,7 +12,7 @@ if ("TURBOPACK compile-time truthy", 1) {
 ;
 console.log(("TURBOPACK compile-time value", "lowercase"));
 ;
-if (__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$other$2e$js__$5b$test$5d$__$28$ecmascript$29$__["UPPER"] === 'UPPER') {
+if (__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$other$2e$js__$5b$57eaaf3787$5d$__["UPPER"] === 'UPPER') {
     console.log('x');
 } else {
     (()=>{
@@ -21,9 +21,9 @@ if (__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbo
         throw e;
     })();
 }
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$other$2e$js__$5b$test$5d$__$28$ecmascript$29$__["UPPER"]);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$other$2e$js__$5b$57eaaf3787$5d$__["UPPER"]);
 ;
-if (__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$non$2d$constant$2e$js__$5b$test$5d$__$28$ecmascript$29$__["nonConstant"].v === 1234) {
+if (__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$non$2d$constant$2e$js__$5b$3488130073$5d$__["nonConstant"].v === 1234) {
     console.log('x');
 } else {
     (()=>{
@@ -32,7 +32,7 @@ if (__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbo
         throw e;
     })();
 }
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$non$2d$constant$2e$js__$5b$test$5d$__$28$ecmascript$29$__["nonConstant"]);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$attribute$2f$input$2f$non$2d$constant$2e$js__$5b$3488130073$5d$__["nonConstant"]);
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-attribute/input/non-constant.js [test] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
