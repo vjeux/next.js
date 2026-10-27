@@ -40,24 +40,24 @@ module.exports = mod;
 
 __turbopack_context__.s([]);
 // Test that Bun builtins are treated as external
-var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$ffi__$5b$external$5d$__$28$bun$3a$ffi$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/bun:ffi [external] (bun:ffi, cjs)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$jsc__$5b$external$5d$__$28$bun$3a$jsc$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/bun:jsc [external] (bun:jsc, cjs)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$sqlite__$5b$external$5d$__$28$bun$3a$sqlite$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/bun:sqlite [external] (bun:sqlite, cjs)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$test__$5b$external$5d$__$28$bun$3a$test$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/bun:test [external] (bun:test, cjs)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$wrap__$5b$external$5d$__$28$bun$3a$wrap$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/bun:wrap [external] (bun:wrap, cjs)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$bun__$5b$external$5d$__$28$bun$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/bun [external] (bun, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$ffi__$5b$b7c5c087a4$5d$__ = __turbopack_context__.i("[externals]/bun:ffi [external] (bun:ffi, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$jsc__$5b$b0bf870020$5d$__ = __turbopack_context__.i("[externals]/bun:jsc [external] (bun:jsc, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$sqlite__$5b$30f1a6b67f$5d$__ = __turbopack_context__.i("[externals]/bun:sqlite [external] (bun:sqlite, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$test__$5b$1415116e90$5d$__ = __turbopack_context__.i("[externals]/bun:test [external] (bun:test, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$wrap__$5b$b9efd19983$5d$__ = __turbopack_context__.i("[externals]/bun:wrap [external] (bun:wrap, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$bun__$5b$238d0d84c2$5d$__ = __turbopack_context__.i("[externals]/bun [external] (bun, cjs)");
 ;
 ;
 ;
 ;
 ;
 ;
-console.log('bun:ffi:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$ffi__$5b$external$5d$__$28$bun$3a$ffi$2c$__cjs$29$__["default"]);
-console.log('bun:jsc:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$jsc__$5b$external$5d$__$28$bun$3a$jsc$2c$__cjs$29$__["default"]);
-console.log('bun:sqlite:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$sqlite__$5b$external$5d$__$28$bun$3a$sqlite$2c$__cjs$29$__["default"]);
-console.log('bun:test:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$test__$5b$external$5d$__$28$bun$3a$test$2c$__cjs$29$__["default"]);
-console.log('bun:wrap:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$wrap__$5b$external$5d$__$28$bun$3a$wrap$2c$__cjs$29$__["default"]);
-console.log('bun:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun__$5b$external$5d$__$28$bun$2c$__cjs$29$__["default"]);
+console.log('bun:ffi:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$ffi__$5b$b7c5c087a4$5d$__["default"]);
+console.log('bun:jsc:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$jsc__$5b$b0bf870020$5d$__["default"]);
+console.log('bun:sqlite:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$sqlite__$5b$30f1a6b67f$5d$__["default"]);
+console.log('bun:test:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$test__$5b$1415116e90$5d$__["default"]);
+console.log('bun:wrap:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun$3a$wrap__$5b$b9efd19983$5d$__["default"]);
+console.log('bun:', __TURBOPACK__imported__module__$5b$externals$5d2f$bun__$5b$238d0d84c2$5d$__["default"]);
 }),
 ]);
 

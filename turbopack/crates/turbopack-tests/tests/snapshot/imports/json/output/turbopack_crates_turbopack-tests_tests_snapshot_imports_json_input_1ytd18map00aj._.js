@@ -7,15 +7,15 @@ module.exports = JSON.parse("[\"foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$package$2e$json$2e5b$json$5d2e$cjs__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/json/input/package.json.[json].cjs [test] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$huge$2e$json$2e5b$json$5d2e$cjs__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/json/input/huge.json.[json].cjs [test] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$invalid$2e$json$2e5b$json$5d2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/json/input/invalid.json.[json].js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$package$2e$json$2e5b$json$5d2e$cjs__$5b$b9b6bb90b5$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/json/input/package.json.[json].cjs [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$huge$2e$json$2e5b$json$5d2e$cjs__$5b$f3b4537c22$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/json/input/huge.json.[json].cjs [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$invalid$2e$json$2e5b$json$5d2e$js__$5b$769f4e0d30$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/json/input/invalid.json.[json].js [test] (ecmascript)");
 ;
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$package$2e$json$2e5b$json$5d2e$cjs__$5b$test$5d$__$28$ecmascript$29$__["default"].name);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$package$2e$json$2e5b$json$5d2e$cjs__$5b$b9b6bb90b5$5d$__["default"].name);
 ;
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$huge$2e$json$2e5b$json$5d2e$cjs__$5b$test$5d$__$28$ecmascript$29$__["default"]);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$huge$2e$json$2e5b$json$5d2e$cjs__$5b$f3b4537c22$5d$__["default"]);
 ;
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$invalid$2e$json$2e5b$json$5d2e$js__$5b$test$5d$__$28$ecmascript$29$__["default"]['this-is']);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$imports$2f$json$2f$input$2f$invalid$2e$json$2e5b$json$5d2e$js__$5b$769f4e0d30$5d$__["default"]['this-is']);
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/json/input/invalid.json.[json].js [test] (ecmascript)", ((__turbopack_context__, module, exports) => {
 

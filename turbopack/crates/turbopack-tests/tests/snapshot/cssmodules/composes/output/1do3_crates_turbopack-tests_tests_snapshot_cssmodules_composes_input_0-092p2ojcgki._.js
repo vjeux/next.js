@@ -3,7 +3,7 @@
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$cssmodules$2f$composes$2f$input$2f$index$2e$module$2e$css__$5b$test$5d$__$28$css__module$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/cssmodules/composes/input/index.module.css [test] (css module)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$cssmodules$2f$composes$2f$input$2f$index$2e$module$2e$css__$5b$0b140cbe97$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/cssmodules/composes/input/index.module.css [test] (css module)");
 ;
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/cssmodules/composes/input/index.module.css [test] (css module)", ((__turbopack_context__) => {

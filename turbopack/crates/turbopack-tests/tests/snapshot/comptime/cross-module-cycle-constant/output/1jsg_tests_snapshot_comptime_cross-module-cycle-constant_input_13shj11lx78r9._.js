@@ -3,9 +3,9 @@
 "use strict";
 
 __turbopack_context__.s([]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-1.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$d81cd705b1$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-1.js [test] (ecmascript)");
 ;
-console.log(__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$test$5d$__$28$ecmascript$29$__["ONE"]);
+console.log(__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$d81cd705b1$5d$__["ONE"]);
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-1.js [test] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -14,9 +14,9 @@ __turbopack_context__.s([
     "ONE",
     ()=>ONE
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$2$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-2.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$2$2e$js__$5b$75d4d65400$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-2.js [test] (ecmascript)");
 ;
-const ONE = '1' + __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$2$2e$js__$5b$test$5d$__$28$ecmascript$29$__["TWO"];
+const ONE = '1' + __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$2$2e$js__$5b$75d4d65400$5d$__["TWO"];
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-2.js [test] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
@@ -25,9 +25,9 @@ __turbopack_context__.s([
     "TWO",
     ()=>TWO
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-1.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$d81cd705b1$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/comptime/cross-module-cycle-constant/input/multiple-1.js [test] (ecmascript)");
 ;
-const TWO = '2' + __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$test$5d$__$28$ecmascript$29$__["ONE"];
+const TWO = '2' + __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$comptime$2f$cross$2d$module$2d$cycle$2d$constant$2f$input$2f$multiple$2d$1$2e$js__$5b$d81cd705b1$5d$__["ONE"];
 }),
 ]);})()
 

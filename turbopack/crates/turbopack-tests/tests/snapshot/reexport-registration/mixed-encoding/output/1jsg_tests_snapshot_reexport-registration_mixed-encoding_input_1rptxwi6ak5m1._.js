@@ -17,16 +17,16 @@ const b = 'b-value';
 
 __turbopack_context__.s([
     "b",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$first$2e$js__$5b$test$5d$__$28$ecmascript$29$__["b"],
+    ()=>__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$first$2e$js__$5b$9883ec10c6$5d$__["b"],
     "c",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$second$2e$js__$5b$test$5d$__$28$ecmascript$29$__["c"],
+    ()=>__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$second$2e$js__$5b$f7780a7a5a$5d$__["c"],
     "has,comma",
-    ()=>__TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$first$2e$js__$5b$test$5d$__$28$ecmascript$29$__["has,comma"]
+    ()=>__TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$first$2e$js__$5b$9883ec10c6$5d$__["has,comma"]
 ]);
 // The first group contains a comma and needs pair encoding. The second is
 // comma-free and should still use compact encoding in the same registration.
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$first$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/reexport-registration/mixed-encoding/input/first.js [test] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$second$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/reexport-registration/mixed-encoding/input/second.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$first$2e$js__$5b$9883ec10c6$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/reexport-registration/mixed-encoding/input/first.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$reexport$2d$registration$2f$mixed$2d$encoding$2f$input$2f$second$2e$js__$5b$f7780a7a5a$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/reexport-registration/mixed-encoding/input/second.js [test] (ecmascript)");
 ;
 ;
 }),

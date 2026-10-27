@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/compact-import-identifiers/input/index.js"],"sourcesContent":["import { Button } from './node_modules/.pnpm/@scope+ui@1.2.3_react@19.2.0/node_modules/@scope/ui/dist/Button.js'\nimport { format } from './lib/format.js'\n\nconsole.log(Button('a'), Button('b'), format(Button('c')))\n"],"names":["console","log"],"mappings":";AAAA;AACA;;;AAEAA,QAAQC,GAAG,CAAC,IAAA,sGAAM,EAAC,MAAM,IAAA,sGAAM,EAAC,MAAM,IAAA,kNAAM,EAAC,IAAA,sGAAM,EAAC"}},
+    {"offset": {"line": 14, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/compact-import-identifiers/input/lib/format.js"],"sourcesContent":["export function format(value) {\n  return value.toUpperCase()\n}\n"],"names":["format","value","toUpperCase"],"mappings":";;;;AAAO,SAASA,OAAOC,KAAK;IAC1B,OAAOA,MAAMC,WAAW;AAC1B"}},
+    {"offset": {"line": 25, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/turbopack/crates/turbopack-tests/tests/snapshot/imports/compact-import-identifiers/input/node_modules/.pnpm/@scope+ui@1.2.3_react@19.2.0/node_modules/@scope/ui/dist/Button.js"],"sourcesContent":["export function Button(label) {\n  return '[' + label + ']'\n}\n"],"names":["Button","label"],"mappings":";;;;AAAO,SAASA,OAAOC,KAAK;IAC1B,OAAO,MAAMA,QAAQ;AACvB","ignoreList":[0]}}]
+}

@@ -2,9 +2,9 @@
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/cjs-remove-unused-exports/this-in-arrow/input/index.js [test] (ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
-var __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$cjs$2d$remove$2d$unused$2d$exports$2f$this$2d$in$2d$arrow$2f$input$2f$lib$2e$js__$5b$test$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/cjs-remove-unused-exports/this-in-arrow/input/lib.js [test] (ecmascript)");
+var __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$cjs$2d$remove$2d$unused$2d$exports$2f$this$2d$in$2d$arrow$2f$input$2f$lib$2e$js__$5b$683a807b01$5d$__ = __turbopack_context__.i("[project]/turbopack/crates/turbopack-tests/tests/snapshot/cjs-remove-unused-exports/this-in-arrow/input/lib.js [test] (ecmascript)");
 ;
-console.log((0, __TURBOPACK__imported__module__$5b$project$5d2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$cjs$2d$remove$2d$unused$2d$exports$2f$this$2d$in$2d$arrow$2f$input$2f$lib$2e$js__$5b$test$5d$__$28$ecmascript$29$__["leak"])());
+console.log((0, __TURBOPACK__imported__module__$2e2f$turbopack$2f$crates$2f$turbopack$2d$tests$2f$tests$2f$snapshot$2f$cjs$2d$remove$2d$unused$2d$exports$2f$this$2d$in$2d$arrow$2f$input$2f$lib$2e$js__$5b$683a807b01$5d$__["leak"])());
 __turbopack_context__.s([]);
 }),
 "[project]/turbopack/crates/turbopack-tests/tests/snapshot/cjs-remove-unused-exports/this-in-arrow/input/lib.js [test] (ecmascript)", ((__turbopack_context__, module, exports) => {

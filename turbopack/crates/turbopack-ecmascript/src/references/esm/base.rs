@@ -1,3 +1,5 @@
+use std::borrow::Cow;
+
 use anyhow::{Result, bail};
 use async_trait::async_trait;
 use bincode::{Decode, Encode};
@@ -16,8 +18,9 @@ use turbo_tasks::{
     NonLocalValue, ResolvedVc, ValueToString, Vc, debug::ValueDebugFormat, turbobail,
 };
 use turbo_tasks_fs::FileSystemPath;
+use turbo_tasks_hash::hash_xxh3_hash64;
 use turbopack_core::{
-    chunk::{ChunkingContext, ChunkingType, ModuleChunkItemIdExt},
+    chunk::{ChunkingContext, ChunkingType, ModuleChunkItemIdExt, ModuleId},
     issue::{
         Issue, IssueExt, IssueSeverity, IssueSource, IssueStage, StyledString,
         code_gen::CodeGenerationIssue,
@@ -374,8 +377,47 @@ impl ReferencedAsset {
         let id = asset.chunk_item_id(chunking_context).await?;
         // There are a number of places in `next` that match on this prefix.
         // See `packages/next/src/shared/lib/magic-identifier.ts`
-        Ok(magic_identifier::mangle(&format!("imported module {id}")))
+        Ok(magic_identifier::mangle(&format!(
+            "imported module {}",
+            imported_module_name(&id)
+        )))
     }
+}
+
+/// The text after `imported module ` in the (mangled) name of the variable that holds an
+/// imported module's namespace.
+///
+/// That variable is written at every use of an imported binding, so its length is paid many
+/// times in every module. Numeric ids are used as they are. Path-like string ids, the readable
+/// `<path> [<layer>] (<modifiers>)` ids used in development, are shortened to the part of the
+/// path after its last `/node_modules/` (or `./` plus the project-relative path), followed by a
+/// hash of the whole id in brackets that keeps the names of different modules distinct, e.g.
+/// `@scope/pkg/dist/index.js [0123456789]`. Tools that display these names drop bracketed
+/// suffixes, so they show `{imported module @scope/pkg/dist/index.js}`.
+fn imported_module_name(id: &ModuleId) -> Cow<'_, str> {
+    const NODE_MODULES: &str = "/node_modules/";
+
+    let ModuleId::String(id) = id else {
+        return Cow::Owned(id.to_string());
+    };
+    if !id.contains('/') {
+        return Cow::Borrowed(id);
+    }
+    let path_end = [" {", " [", " ("]
+        .iter()
+        .filter_map(|separator| id.find(separator))
+        .min()
+        .unwrap_or(id.len());
+    let path = &id[..path_end];
+    let short_path: Cow<'_, str> = if let Some(index) = path.rfind(NODE_MODULES) {
+        Cow::Borrowed(&path[index + NODE_MODULES.len()..])
+    } else if let Some(project_relative) = path.strip_prefix("[project]/") {
+        Cow::Owned(format!("./{project_relative}"))
+    } else {
+        Cow::Borrowed(path)
+    };
+    let hash = hash_xxh3_hash64(id) & 0xff_ffff_ffff;
+    Cow::Owned(format!("{short_path} [{hash:010x}]"))
 }
 
 impl ReferencedAsset {
@@ -525,7 +567,120 @@ impl EsmReferenceExtras {
 
 #[cfg(test)]
 mod tests {
-    use super::merge_export_usage_passthrough;
+    use turbopack_core::chunk::ModuleId;
+
+    use super::{imported_module_name, merge_export_usage_passthrough};
+    use crate::magic_identifier;
+
+    fn short_name(id: &str) -> String {
+        imported_module_name(&ModuleId::String(id.into())).into_owned()
+    }
+
+    /// The bracketed hash the name ends with.
+    fn hash(name: &str) -> &str {
+        name.rsplit_once(" [")
+            .and_then(|(_, rest)| rest.strip_suffix(']'))
+            .unwrap()
+    }
+
+    #[test]
+    fn imported_module_name_keeps_short_ids() {
+        assert_eq!(imported_module_name(&ModuleId::Number(1836)), "1836");
+        assert_eq!(
+            imported_module_name(&ModuleId::String("1234567890".into())),
+            "1234567890"
+        );
+    }
+
+    #[test]
+    fn imported_module_name_shortens_pnpm_paths() {
+        let id = "[project]/apps/web/node_modules/.pnpm/@scope+ui@1.2.3_react-dom@19.2.0_react@19.\
+                  2.0__react@19.2.0/node_modules/@scope/ui/dist/Button/Button.js [app-client] \
+                  (ecmascript)";
+        let name = short_name(id);
+        assert!(
+            name.starts_with("@scope/ui/dist/Button/Button.js ["),
+            "{name}"
+        );
+        assert_eq!(hash(&name).len(), 10);
+        assert!(hash(&name).chars().all(|c| c.is_ascii_hexdigit()));
+
+        let long = magic_identifier::mangle(&format!("imported module {id}"));
+        let short = magic_identifier::mangle(&format!("imported module {name}"));
+        assert!(short.len() * 2 < long.len(), "{short} vs {long}");
+    }
+
+    #[test]
+    fn imported_module_name_uses_project_relative_paths() {
+        let name = short_name("[project]/app/components/foo.tsx [app-rsc] (ecmascript)");
+        assert!(name.starts_with("./app/components/foo.tsx ["), "{name}");
+
+        // Asset references inside the ident are not part of the path.
+        let name = short_name(
+            "[project]/app/page.module.css.module.css { IMPORTS => \"[project]/app/x.css \
+             [app-client] (css)\" } [app-client] (css module)",
+        );
+        assert!(
+            name.starts_with("./app/page.module.css.module.css ["),
+            "{name}"
+        );
+
+        let name =
+            short_name("[turbopack]/browser/runtime/base/dev-base.ts [app-client] (ecmascript)");
+        assert!(
+            name.starts_with("[turbopack]/browser/runtime/base/dev-base.ts ["),
+            "{name}"
+        );
+    }
+
+    #[test]
+    fn imported_module_name_keeps_modules_with_the_same_short_path_apart() {
+        let a = short_name(
+            "[project]/node_modules/.pnpm/pkg@1.0.0/node_modules/pkg/index.js [app-ssr] \
+             (ecmascript)",
+        );
+        let b = short_name(
+            "[project]/node_modules/.pnpm/pkg@2.0.0/node_modules/pkg/index.js [app-ssr] \
+             (ecmascript)",
+        );
+        let c = short_name(
+            "[project]/node_modules/.pnpm/pkg@1.0.0/node_modules/pkg/index.js [app-rsc] \
+             (ecmascript)",
+        );
+        assert!(a.starts_with("pkg/index.js ["), "{a}");
+        assert!(b.starts_with("pkg/index.js ["), "{b}");
+        assert_ne!(a, b);
+        assert_ne!(a, c);
+        assert_ne!(b, c);
+        // Deterministic.
+        assert_eq!(
+            a,
+            short_name(
+                "[project]/node_modules/.pnpm/pkg@1.0.0/node_modules/pkg/index.js [app-ssr] \
+                 (ecmascript)"
+            )
+        );
+    }
+
+    #[test]
+    fn imported_module_name_round_trips_through_the_magic_identifier() {
+        let name = short_name("[project]/app/foo.ts [app-rsc] (ecmascript)");
+        let ident = magic_identifier::mangle(&format!("imported module {name}"));
+        assert!(
+            ident.starts_with("__TURBOPACK__imported__module__"),
+            "{ident}"
+        );
+        assert!(
+            ident
+                .chars()
+                .all(|c| c.is_ascii_alphanumeric() || c == '_' || c == '$'),
+            "{ident}"
+        );
+        assert_eq!(
+            magic_identifier::unmangle(&ident).as_deref(),
+            Some(format!("imported module {name}").as_str())
+        );
+    }
 
     #[test]
     fn annotation_passthrough_cannot_be_weakened() {
