@@ -193,13 +193,15 @@ function Head({
   const head = headRenderTree.data.rsc
   const prefetchHead = headRenderTree.data.prefetchRsc
 
-  // If no prefetch data is available, then we go straight to rendering `head`.
-  const resolvedPrefetchRsc = prefetchHead !== null ? prefetchHead : head
+  // If no prefetch data is available, then we go straight to rendering `head`,
+  // with no initial value, so React does not schedule a deferred render of the
+  // same value (see the matching comment in LayoutRouter).
+  const initialHead = prefetchHead !== null ? prefetchHead : undefined
 
   // We use `useDeferredValue` to handle switching between the prefetched and
   // final values. The second argument is returned on initial render, then it
   // re-renders with the first argument.
-  return useDeferredValue(head, resolvedPrefetchRsc)
+  return useDeferredValue(head, initialHead)
 }
 
 /**
